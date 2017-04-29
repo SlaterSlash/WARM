@@ -3,9 +3,9 @@ function init(https,express,app){
   app.use('/sw',function(req,res){
     const option = {
       'host':'api.skywatch.co',
-      'path':'/data/time' + req.query.date + '/location' + req.query.long + ',' + req.query.lat + '/band/true-colour-image',
+      'path':'/data/time/' + req.query.date + '/location/' + req.query.loc + '/band/true-colour-image',
       'headers':{
-        'username': SW_API_KEY
+        'x-api-key': SW_API_KEY
       }
     };
     https.request(option,function(response){

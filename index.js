@@ -6,11 +6,14 @@ const http = require('http');
 const PORT = 8080;
 
 const skywatchAPI = require('./bin/skywatchAPI');
-skywatchAPI(http,express,app);
+skywatchAPI(https,express,app);
+
 const nasaAPI = require('./bin/nasaAPI');
 nasaAPI(https,express,app);
-const gRadiation = require('./bin/gRadiation');
-gRadiation(https,express,app);
+
+// const gRadiation = require('./bin/gRadiation');
+// gRadiation(https,express,app);
+
 const rRoute = require('./bin/rRoute');
 rRoute(https,express,app);
 
