@@ -1,19 +1,24 @@
 function init(http,express,app){
+  var querystring = require('querystring');
   app.use('/grad',function(req,res){
-    const post_data = 'DateOfFlight=12%2F2016&Ocode=KDYS&DCode=EGLL&NumOfSteps=2&ClimbTime=10&btnSubmit=Continue';
-    console.log(Buffer.byteLength(post_data));
+    var post_data = querystring.stringify({
+      'DateOfFlight' : '12/2016',
+      'Ocode': 'KDYS',
+      'DCode': 'EGLL',
+      'NumOfSteps' : 2,
+      'ClimbTime' : 10
+    });
+    res.cookie('ASPSESSIONIDQQQBQBRB', 'EHEFEIBCLMILNGKLFFELGPJA', { maxAge: 900000, httpOnly: true });
     const option = {
       'host':'jag.cami.jccbi.gov',
-      'path':'/cariprofile.asp',
+      'path':'/cariprofile2.asp',
       'method':'POST',
       'headers': {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Content-Length': Buffer.byteLength(post_data),
-          'Cookie':'ASPSESSIONIDQQQBQBRB=EHEFEIBCLMILNGKLFFELGPJA',
-          'Referer': 'http://jag.cami.jccbi.gov/cariprofile.asp',
-          'Origin': 'http://jag.cami.jccbi.gov',
-          'Connection': 'keep-alive'
-      }
+          'Content-Length': Buffer.byteLength(post_data)
+          // 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+      },
+      'port':398
     };
     var post_request = http.request(option,function(response){
       var rspData = ''

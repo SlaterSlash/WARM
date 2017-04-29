@@ -1,4 +1,5 @@
 var files = [
+  'mapLayout.js',
   'mapLoader.js'
 ];
 
