@@ -9,7 +9,7 @@ function init(https,express,app){
       }
     };
     https.request(option,function(response){
-      var rspData = ''
+      var rspData = '';
       response.on('data',function(chunk){
         rspData += chunk;
       });
