@@ -1,7 +1,5 @@
 var files = [
-  'sylvester.js',
-  'glUtils.js',
-  'glSetup.js'
+  'mapLoader.js'
 ];
 
 files.forEach(function(elm){

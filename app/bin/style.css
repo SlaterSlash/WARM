@@ -6,6 +6,10 @@ html,body{
   overflow: hidden;
 }
 #main-frame{
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
+}
+.sidebar{
+  width: 30vw;
+  
 }
