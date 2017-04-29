@@ -22,10 +22,20 @@ html,body{
 }
 #map{
   width: 70vw;
-  height: 100vh;
+  height: 50vh;
   position: absolute;
   left: 0px;
   z-index: 1;
+  box-shadow: 0px 0px 2vw black;
+}
+#globe{
+  width: 70vw;
+  height: 50vh;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+  z-index: -10;
 }
 .sidebar{
   width: 30vw;
@@ -63,7 +73,7 @@ iframe{
   margin-top:1vh;
   width: 20vw;
   height:3vh;
-  border-radius: 1vw;
+  border-radius: 0.5vw;
   border: 0;
   font-size: 2vh;
   background-color: #4a5e63;
@@ -73,7 +83,7 @@ iframe{
 #flightID{
   margin-left: 0.5vw;
   width:1vw;
-  border-radius: 0px 1vw 1vw 0px;
+  border-radius: 0 0.5vw 0.5vw 0;
   border: 0;
   height: 3vh
 }
