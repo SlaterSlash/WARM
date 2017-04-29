@@ -4,6 +4,14 @@ html,body{
   margin: 0;
   background-color: BLACK;
   overflow: hidden;
+  font-family: 'Arimo', sans-serif;
+  color: #b3d8cd;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-variant: small-caps;
 }
 #main-frame{
   width: 70vw;
@@ -26,8 +34,54 @@ html,body{
   position: absolute;
   right: 0px;
   background-color: #191e1e;
-  box-shadow: 0px 0px 2px black;
+  box-shadow: 0px 0px 2vw black;
+  z-index: 100;
 }
 .gmnoprint{
   display:none;
+}
+.container{
+  width: 25vw;
+  height: 99vh;
+  position: absolute;
+  left: 2.5vw;
+  font-size: 4vh;
+  margin-top:1vh;
+}
+iframe{
+  margin-top:1vh;
+  border: 0;
+  width: 25vw;
+  height: 20vh;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.input{
+  margin-top:1vh;
+  width: 20vw;
+  height:3vh;
+  border-radius: 1vw;
+  border: 0;
+  font-size: 2vh;
+  background-color: #4a5e63;
+  line-height: 3vh;
+  padding-left: 1vw;
+}
+#flightID{
+  margin-left: 0.5vw;
+  width:1vw;
+  border-radius: 0px 1vw 1vw 0px;
+  border: 0;
+  height: 3vh
+}
+#flightID:hover{
+}
+#flightID:active{
+  outline:none;
+}
+#flightID:focus{
+  outline:none;
 }

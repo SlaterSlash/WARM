@@ -2,11 +2,12 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="bin/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: {lat: 50, lng: 50.644},
           zoom: 8,
           mapTypeId: 'terrain',
           styles:[
@@ -253,7 +254,14 @@
     <div id='map'>
     </div>
     <div class="sidebar" id='sidebar'>
-      Flight Plan
+      <div class='container' id='container'>
+        flight plan
+        <div class='input' id='flightID-contain'>
+          flight id
+          <input type="text" id='flightID' />
+        </div>
+        <iframe src="http://jag.cami.jccbi.gov/cariprofile.asp"></iframe>
+      </div>
     </div>
   </body>
   <script type="text/javascript" src="/gMaps"></script>
