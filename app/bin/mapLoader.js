@@ -1,18 +1,25 @@
-const API_KEY = 'KkELjw9yDCpJuv9SbLSmJ4rAIS1HQwMs8rxv9Utx';
+
 window.addEventListener('load', function() {
   const canvas = document.getElementById('main-frame');
+  const context = canvas.getContext('2d');
+  var imgObj = new Image();
+  imgObj.addEventListener('load', function(e) {
+    context.drawImage(imgObj,0,0);
+  });
   const lat = 50;
   const lon = 50;
-  console.log(loadMapChunk(lat,lon));
+  console.log(getNASAImageryLink(lat,lon));
+  // imgObj.src = getNASAImageryLink(lat,lon);
 });
 
 
-function loadMapChunk(lat,lon){
+function getNASAImageryLink(lat,lon){
   var data = '';
   var linkRequest = new XMLHttpRequest();
-  linkRequest.open('GET','https://api.nasa.gov/planetary/earth/imagery?lon=' + lon + '&lat=' + lat + '&cloud_score=True&api_key=' + API_KEY,true);
+  linkRequest.open('GET',window.location.href + 'nasa?lon=' + lon + '&lat=' + lat);
   linkRequest.onreadystatechange = function(){
-    console.log('linkRequest.readyState,linkRequest.status');
+    data = linkRequest.responseText;
+    console.log(linkRequest.responseText);
   }
-  return data;
+  linkRequest.send();
 }
