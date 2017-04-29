@@ -36,10 +36,11 @@ app.use('/flight',function(req,res){
 
         console.log('Waypoint[' + i + ']: '+ 'Latitude= ' + latitude + ' Longitude= ' + longitude + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal);
 
-        route = route + 'Waypoint[' + i + ']: '+ 'Latitude= ' + latitude + ' Longitude= ' + longitude + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal + '\n';
+        // route = route + 'Waypoint[' + i + ']: '+ 'Latitude= ' + latitude + ' Longitude= ' + longitude + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal + '\n';
 
       } // for
 
+      route = route + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal + '\n';
 
       res.end(route);
     });
