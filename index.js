@@ -4,9 +4,8 @@ const fs = require('fs');
 const https = require('https');
 const PORT = 8080;
 const nasaAPI = require('./bin/nasaAPI');
-nasaAPI();
-
-const rRoute = require('./rRoute');
+nasaAPI(https,express,app);
+const rRoute = require('./bin/rRoute');
 rRoute(https,express,app);
 
 app.use(express.static('./app'));
