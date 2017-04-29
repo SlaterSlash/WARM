@@ -17,6 +17,9 @@ gRadiation(https,express,app);
 const rRoute = require('./bin/rRoute');
 rRoute(https,express,app);
 
+const flightplan = require('./bin/flightplan');
+flightplan(https,express,app);
+
 app.use(express.static('./app'));
 
 app.listen(PORT,function(){

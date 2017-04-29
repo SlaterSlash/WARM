@@ -3,7 +3,7 @@ function init(https,express,app){
   app.use('/fpdb',function(req,res){
     const option = {
       'host':'api.flightplandatabase.com',
-      'path':'/plan/' + req.query.flighID,
+      'path':'/plan/' + req.query.flightID,
       'headers':{
         'username': FPDB_API_KEY
       }
