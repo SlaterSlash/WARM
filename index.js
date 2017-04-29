@@ -6,7 +6,7 @@ const PORT = 8080;
 const rRoute = require('./rRoute');
 const NASA_API_KEY = 'KkELjw9yDCpJuv9SbLSmJ4rAIS1HQwMs8rxv9Utx';
 
-
+gRadiation(https,express,app);
 rRoute(https,express,app);
 
 app.use(express.static('./app'));
