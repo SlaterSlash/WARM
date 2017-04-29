@@ -1,15 +1,15 @@
-const FPDB_API_KEY = 'qoCf2fw9AwAWy4h5iEscNZC3zpXRmg058GTO27TB';
+const SW_API_KEY = '8017e3b3-978f-497a-842d-67f673f7f92c';
 function init(https,express,app){
-  app.use('/fpdb',function(req,res){
+  app.use('/sw',function(req,res){
     const option = {
-      'host':'api.flightplandatabase.com',
-      'path':'/plan/' + req.query.flighID,
+      'host':'api.skywatch.co',
+      'path':'/data/time' + req.query.date + '/location' + req.query.long + ',' + req.query.lat + '/band/true-colour-image',
       'headers':{
-        'username': FPDB_API_KEY
+        'username': SW_API_KEY
       }
     };
     https.request(option,function(response){
-      var rspData = ''
+      var rspData = '';
       response.on('data',function(chunk){
         rspData += chunk;
       });
