@@ -1,6 +1,5 @@
 var files = [
-  'mapLayout.js',
-  'mapLoader.js'
+  'mapLayout.js'
 ];
 
 files.forEach(function(elm){
