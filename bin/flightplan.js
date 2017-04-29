@@ -25,28 +25,24 @@ app.use('/flight',function(req,res){
 
       console.log('Flight Plan ' + JSON.parse(rspData)['id']);
 
-      var route = 'Flight Plan ' + JSON.parse(rspData)['id'] + ' from ' + JSON.parse(rspData)['fromName'] + ' to ' + JSON.parse(rspData)['toName'] + '\n';
+      var route = '"Nodes": [';
 
       for (var i = 0; i < JSON.parse(rspData)['waypoints']; i++)
       {
-        var radiation = 0;
-        var radiationTotal = 0;
 
         var latitude = JSON.parse(rspData)['route']['nodes'][i]['lat'];
         var longitude = JSON.parse(rspData)['route']['nodes'][i]['lon'];
 
-        //some code to get the radiation
-
-        radiationTotal = radiation * 100 / 3.11;
-
-        console.log('Waypoint[' + i + ']: '+ 'Latitude= ' + latitude + ' Longitude= ' + longitude + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal);
-
-        // route = route + 'Waypoint[' + i + ']: '+ 'Latitude= ' + latitude + ' Longitude= ' + longitude + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal + '\n';
+        route = route + '{' + '"lat": ' + latitude + ', "lon": ' + longitude + '}';
+        if (i < JSON.parse(rspData)['waypoints']-1)
+        {
+          route = route +',';
+        }
 
       } // for
 
-      route = route + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal + '\n';
-
+      route = route + ']';
+      console.log(route);
       res.end(route);
     });
 
