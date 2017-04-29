@@ -1,13 +1,26 @@
 <!DOCTYPE html>
+<html>
   <head>
     <link rel="stylesheet" type="text/css" href="bin/style.css" />
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
     <script type="text/javascript" src="bin/linker.js"></script>
   </head>
   <body>
     <canvas id='main-frame'>
     </canvas>
+    <div id='map'>
+    </div>
     <div class="sidebar" id='sidebar'>
       Flight Plan
     </div>
   </body>
+  <script type="text/javascript" src="/gMaps"></script>
 </html>
