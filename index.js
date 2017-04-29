@@ -3,13 +3,11 @@ const app = express();
 const fs = require('fs');
 const https = require('https');
 const PORT = 8080;
-
 const nasaAPI = require('./bin/nasaAPI');
-const NASA_API_KEY = 'KkELjw9yDCpJuv9SbLSmJ4rAIS1HQwMs8rxv9Utx';
-
 nasaAPI();
 
-const rRoute = require('rRoute');
+const rRoute = require('./rRoute');
+rRoute(https,express,app);
 
 app.use(express.static('./app'));
 

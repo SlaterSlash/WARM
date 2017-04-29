@@ -1,5 +1,4 @@
-const express = require('express');
-const app = express();
+const NASA_API_KEY = 'KkELjw9yDCpJuv9SbLSmJ4rAIS1HQwMs8rxv9Utx';
 function init(){
   app.get('/nasa',function(req,res){
     const option = {
