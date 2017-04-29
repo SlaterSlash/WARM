@@ -1,0 +1,74 @@
+{
+  "id": 62493,
+  "fromICAO": "NONE",
+  "toICAO": "NONE",
+  "fromName": "NONE",
+  "toName": "Vankarem",
+  "flightNumber": null,
+  "distance": 3157.88876623323,
+  "maxAltitude": 0,
+  "waypoints": 2,
+  "popularity": 0,
+  "notes": null,
+  "encodedPolyline": "yvh~Hgi`\\lggfAjyi~M",
+  "createdAt": "2015-08-05T22:44:34.000Z",
+  "updatedAt": "2015-08-05T22:44:34.000Z",
+  "tags": [
+    "atlantic"
+  ],
+  "user": {
+    "id": 1,
+    "username": "example",
+    "gravatarHash": "f30b58b998a11b5d417cc2c78df3f764",
+    "location": null
+  },
+  "route": {
+    "nodes": [
+      {
+        "type": "APT",
+        "ident": "NONE",
+        "name": "Eureka",
+        "lat": 74.33167314,
+        "lon": -109.66681026,
+        "alt": 0,
+        "via": null
+      },
+	{
+        "type": "LATLON",
+        "ident": "NONE",
+        "name": null,
+        "lat": 76.74027608,
+        "lon": -114.87488474,
+        "alt": 10000,
+        "via": null
+      },
+	{
+        "type": "LATLON",
+        "ident": "NONE",
+        "name": null,
+        "lat": 84.82724974,
+        "lon": -89.13161283,
+        "alt": 15000,
+        "via": null
+      },
+	{
+        "type": "LATLON",
+        "ident": "NONE",
+        "name": null,
+        "lat": 69.32539238,
+        "lon": -157.96637219,
+        "alt": 10000,
+        "via": null
+      },
+	{
+        "type": "APT",
+        "ident": "NONE",
+        "name": "Vankarem",
+        "lat": 72.32560317,
+        "lon": -129.64269586,
+        "alt": 0,
+        "via": null
+      }
+    ]
+  }
+}
