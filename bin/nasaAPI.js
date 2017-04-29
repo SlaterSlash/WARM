@@ -1,4 +1,6 @@
-module.export = function (){
+const express = require('express');
+const app = express();
+function init(){
   app.get('/nasa',function(req,res){
     const option = {
       'host':'api.nasa.gov',
@@ -15,3 +17,4 @@ module.export = function (){
     }).end();
   });
 }
+module.exports = init;
