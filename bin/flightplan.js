@@ -1,4 +1,4 @@
-const FPDB_API_KEY = 'qoCf2fw9AwAWy4h5iEscNZC3zpXRmg058GTO27TB';
+var key = require('../apiKEYS.json');
 
 function init(https,express,app){
 
@@ -8,7 +8,7 @@ app.use('/flight',function(req,res){
     'host':'api.flightplandatabase.com',
     'path':'/plan/' + req.query.flightID,
     'headers':{
-      'username': FPDB_API_KEY
+      'username': key['rRoute']
     }
   };
   https.request(option3,function(response){
