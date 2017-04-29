@@ -8,7 +8,7 @@ app.use('/flight',function(req,res){
     'host':'api.flightplandatabase.com',
     'path':'/plan/' + req.query.flightID,
     'headers':{
-      'username': key['rRoute']
+      'username': key['rRoute'],
       'Content-Type': 'application/json; charset=utf-8',
       'X-API-Version': 1,
       'X-Units': 'SI',
