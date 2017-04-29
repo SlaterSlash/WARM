@@ -1,13 +1,11 @@
-const https = require('https');
-const express = require('express');
-const app = express();
-function init(){
-  app.get('/fpdb',function(req,res){
+const FPDB_API_KEY = 'qoCf2fw9AwAWy4h5iEscNZC3zpXRmg058GTO27TB';
+function init(https,express,app){
+  app.use('/fpdb',function(req,res){
     const option = {
       'host':'api.flightplandatabase.com',
-      'path':'/plan?id=' + req.query.flighID,
+      'path':'/plan/' + req.query.flighID,
       'headers':{
-        'user': FPDB_API_KEY
+        'username': FPDB_API_KEY
       }
     };
     https.request(option,function(response){
@@ -17,7 +15,7 @@ function init(){
       });
       response.on('end',function(){
         res.end(rspData);
-      })
+      });
     }).end();
   });
 }
