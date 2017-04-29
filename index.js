@@ -2,15 +2,14 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const https = require('https');
+const http = require('http');
 const PORT = 8080;
-const rRoute = require('./rRoute');
 
+const gRadiation = require('./bin/gRadiation');
 gRadiation(https,express,app);
-
 const nasaAPI = require('./bin/nasaAPI');
 nasaAPI(https,express,app);
 const rRoute = require('./bin/rRoute');
-
 rRoute(https,express,app);
 
 app.use(express.static('./app'));
