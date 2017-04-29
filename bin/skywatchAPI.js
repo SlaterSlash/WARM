@@ -3,7 +3,7 @@ function init(https,express,app){
   app.use('/sw',function(req,res){
     const option = {
       'host':'api.skywatch.co',
-      'path':'/data/time/' + req.query.date + '/location/' + req.query.loc + '/band/true-colour-image',
+      'path':'/data/time/' + req.query.date + '/location/' + + req.query.lon + ',' + req.query.lat + '/band/near-infrared',
       'headers':{
         'x-api-key': SW_API_KEY
       }
