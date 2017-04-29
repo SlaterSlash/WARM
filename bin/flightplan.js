@@ -25,7 +25,7 @@ app.use('/flight',function(req,res){
 
       console.log('Flight Plan ' + JSON.parse(rspData)['id']);
 
-      var route = '"Nodes": [';
+      var route = 'var pts = [';
 
       for (var i = 0; i < JSON.parse(rspData)['waypoints']; i++)
       {
