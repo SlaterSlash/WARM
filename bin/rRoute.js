@@ -1,4 +1,6 @@
-const FPDB_API_KEY = 'qoCf2fw9AwAWy4h5iEscNZC3zpXRmg058GTO27TB';
+var key = require('../apiKEYS.json');
+
+const FPDB_API_KEY = key['rRoute'];
 function init(https,express,app){
   app.use('/fpdb',function(req,res){
     const option = {
