@@ -28,6 +28,8 @@ app.use('/fpdb',function(req,res){
 
       var route = 'Flight Plan ' + JSON.parse(rspData)['id'] + ' from ' + JSON.parse(rspData)['fromName'] + ' to ' + JSON.parse(rspData)['toName'] + '\n';
 
+      var waypoint = [];
+
       for (var i = 0; i < JSON.parse(rspData)['waypoints']; i++)
       {
         var radiation = 0;
@@ -35,6 +37,8 @@ app.use('/fpdb',function(req,res){
 
         var latitude = JSON.parse(rspData)['route']['nodes'][i]['lat'];
         var longitude = JSON.parse(rspData)['route']['nodes'][i]['lon'];
+
+        waypoint.push('Waypoint[' + i + ']: '+'Latitude= ' + latitude + ' Longitude= ' + longitude);
 
         //some code to get the radiation
 
@@ -46,7 +50,7 @@ app.use('/fpdb',function(req,res){
 
       } // for
 
-      route = route + ' Ionizing Radiation ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal + '\n';
+      route = route + ' Galactic Radiation Received in Flight ' + radiation + ' millisieverts' + ' % of total ' + radiationTotal + '\n';
 
       res.end(route);
     });
