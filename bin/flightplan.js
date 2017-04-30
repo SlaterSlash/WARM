@@ -1,4 +1,4 @@
-var key = require('../apiKEYS.json'); 
+var key = require('../apiKEYS.json');
 
 function init(https,express,app){
 
@@ -22,28 +22,32 @@ app.use('/flight',function(req,res){
       rspData += chunk;
     });
     response.on('end',function(){
+      const data = JSON.parse(rspData);
+      if(data.message != '' || data.message != undefined){
+        console.log('api.flightplandatabase.com: ' + data.message);
+        res.end('');
+      }
+      else{
+        var route = '[';
 
-      console.log('Flight Plan ' + JSON.parse(rspData)['id']);
-
-      var route = 'var pts = [';
-
-      for (var i = 0; i < JSON.parse(rspData)['waypoints']; i++)
-      {
-
-        var latitude = JSON.parse(rspData)['route']['nodes'][i]['lat'];
-        var longitude = JSON.parse(rspData)['route']['nodes'][i]['lon'];
-
-        route = route + '{' + '"lat": ' + latitude + ', "lon": ' + longitude + '}';
-        if (i < JSON.parse(rspData)['waypoints']-1)
+        for (var i = 0; i < JSON.parse(rspData)['waypoints']; i++)
         {
-          route = route +',';
-        }
 
-      } // for
+          var latitude = JSON.parse(rspData)['route']['nodes'][i]['lat'];
+          var longitude = JSON.parse(rspData)['route']['nodes'][i]['lon'];
 
-      route = route + ']';
-      console.log(route);
-      res.end(route);
+          route = route + '{' + '"lat": ' + latitude + ', "lon": ' + longitude + '}';
+          if (i < JSON.parse(rspData)['waypoints']-1)
+          {
+            route = route +',';
+          }
+
+        } // for
+
+        route = route + ']';
+        console.log('api.flightplandatabase.com: ' + route);
+        res.end(route);
+      }
     });
 
   }).end();
