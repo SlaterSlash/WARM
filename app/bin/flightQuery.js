@@ -1,4 +1,4 @@
-<script type="text/javascript" src="flight?flightID=123">
+// <script type="text/javascript" src="flight?flightID=123">
 
 function flightQuery(flightID,callback){
   var request = new XMLHttpRequest;
