@@ -1,5 +1,4 @@
 var files = [
-  'mapLayout.js'
 ];
 
 files.forEach(function(elm){
