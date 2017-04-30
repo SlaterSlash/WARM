@@ -10,7 +10,6 @@ app.use('/flight',function(req,res){
     'headers':{
       'username': key['rRoute'],
       'Accept': 'application/json; charset=utf-8',
-      'X-API-Version': 1,
       'X-Units': 'SI'
     }
   };
