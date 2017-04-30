@@ -9,11 +9,9 @@ app.use('/flight',function(req,res){
     'path':'/plan/' + req.query.flightID,
     'headers':{
       'username': key['rRoute'],
-      'Content-Type': 'application/json; charset=utf-8',
+      'Accept': 'application/json; charset=utf-8',
       'X-API-Version': 1,
-      'X-Units': 'SI',
-      'X-Limit-Cap': 100,
-      'X-Limit-Used': 1
+      'X-Units': 'SI'
     }
   };
   https.request(option3,function(response){
@@ -24,7 +22,7 @@ app.use('/flight',function(req,res){
     response.on('end',function(){
       const data = JSON.parse(rspData);
       if(data.message != '' || data.message != undefined){
-        console.log('api.flightplandatabase.com: ' + data.message);
+        console.log('api.flightplandatabase.com: ' + data.message,response.headers);
         res.end('');
       }
       else{
