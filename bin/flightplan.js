@@ -1,4 +1,4 @@
-var key = require('../apiKEYS.json');
+var key = require('../apiKEYS.json'); 
 
 function init(https,express,app){
 
@@ -25,7 +25,7 @@ app.use('/flight',function(req,res){
 
       console.log('Flight Plan ' + JSON.parse(rspData)['id']);
 
-      var route = '"Nodes": [';
+      var route = 'var pts = [';
 
       for (var i = 0; i < JSON.parse(rspData)['waypoints']; i++)
       {
