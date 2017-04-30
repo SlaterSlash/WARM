@@ -25,6 +25,7 @@ const flightplan = require('./bin/flightplan');
 flightplan(https,express,app);
 
 app.use(express.static('./app'));
+app.use('/WorldWeather',express.static('./WorldWeather'));
 
 app.listen(PORT,function(){
   console.log('The server is up! Point your browser to localhost:' + PORT);
