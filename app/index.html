@@ -3,14 +3,12 @@
   <head>
     <link rel="stylesheet" type="text/css" href="bin/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
-    <script type="text/javascript" src="flight?flightID=123">
-    console.log(pts);
-    </script>
     <script>
       var map;
+      var center = {lat: 50, lng: 50.644};
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 50, lng: 50.644},
+          center: center,
           zoom: 8,
           mapTypeId: 'terrain',
           styles:[

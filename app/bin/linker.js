@@ -1,10 +1,11 @@
 var files = [
-  'mapLayout.js'
+  'bin/fieldUpdater.js',
+  'bin/flightQuery.js'
 ];
 
 files.forEach(function(elm){
   var script = document.createElement('script');
-  script.src = 'bin/' + elm;
+  script.src = elm;
   script.type = 'text/javascript';
   document.head.appendChild(script);
 });
